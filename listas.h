@@ -5,4 +5,6 @@
 typedef struct _lista lista;
 
 
+lista *iniLista(void);
+
 #endif

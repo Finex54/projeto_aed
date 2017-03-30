@@ -3,6 +3,7 @@
 #include <strings.h>
 
 #include "listas.h"
+#include "matriz.h"
 
 
 struct _lista {

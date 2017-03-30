@@ -1,8 +1,8 @@
 CC=gcc
 CFLAGS=-g -Wall
 
-burster: main.o lista.o matriz.o
-	$(CC) $(CFLAGS) -o burster main.o list.o utils.o matrix.o
+burster: main.o listas.o matriz.o
+	$(CC) $(CFLAGS) -o burster main.o listas.o matriz.o
 
 main.o: main.c listas.h matriz.h
 	$(CC) -c $(CFLAGS) main.c
@@ -10,7 +10,7 @@ main.o: main.c listas.h matriz.h
 matriz.o: matriz.c matriz.h
 	$(CC) -c $(CFLAGS) matriz.c
 
-listas.o: listas.c listas.h matriz.z
+listas.o: listas.c listas.h matriz.c
 	$(CC) -c $(CFLAGS) listas.c
 
 clean::
