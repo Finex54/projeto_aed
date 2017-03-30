@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+
 #include "matriz.h"
-#include "listas.h"
 
 
 
@@ -18,6 +18,19 @@ lista *iniLista(void)
   return NULL;
 }
 
+
+lista *getProxElementoLista(lista *m)
+{
+
+  return m -> prox;
+}
+
+
+matriz* getItemLista (lista *m)
+{
+
+  return m -> this;
+}
 
 
 
@@ -47,4 +60,29 @@ lista  *criaNovoNoLista (lista* lm, matriz* this, int *err)
     *err = 1;
   }
   return lm;
+}
+
+
+
+/******************************************************************************
+ * libertaLista ()
+ *
+ * Arguments: lm - pointer to list
+ * Returns:  (void)
+ * Side-Effects: frees space occupied by list items
+ *
+ * Description: free list
+ *
+ *****************************************************************************/
+void libertaLista(lista *lm, void freeItem(matriz*)) 
+{
+  lista *aux, *newhead;  /* auxiliar pointers to travel through the list */
+
+  for(aux = lm; aux != NULL; aux = newhead) {
+    newhead = aux->prox;
+    freeItem(aux->this);
+    free(aux);
+  }
+
+  return;
 }

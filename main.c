@@ -6,6 +6,39 @@
 
 
 /******************************************************************************
+ *  PrintList ()
+ *
+ * Arguments:  lm - pointer to the list
+ * Returns: (void)
+ * Side-Effects: none
+ *
+ * Description: print the list of matrices. 
+ *****************************************************************************/
+void PrintList(lista *lm){
+
+  lista *aux;
+  matriz *mA;
+
+  printf("--> Printing items saved in memory...\n");
+
+  aux = lm;
+  while( aux!= NULL ){
+    mA = (matriz *) getItemLista(aux);
+    PrintMatrix( mA );
+    aux = getProxElementoLista(aux);
+  }
+
+  printf( "...[DONE]\n" );
+
+  return;
+
+}
+
+
+
+
+
+/******************************************************************************
  * Usage ()
  *
  * Arguments: nomeProg - name of executable
@@ -75,10 +108,14 @@ int main(int argc, char *argv[])
 
   lista_matrizes = saveMatrices( fp_entrada );
 
+  /*APENAS PARA TESTE*/
+    PrintList( lista_matrizes);
 
 
 
   	/*Liberta a memória da lista*/
+
+    /*FALTA LIBERTAR MEMÓRIA DA LISTA AQUI*/
 
 
   	/*Fecha o ficheiro*/

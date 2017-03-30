@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "matriz.h"
-#include "listas.h"
 
 struct _matriz {
   float **values;
@@ -139,3 +139,48 @@ lista *saveMatrices( FILE *fm )
 
 }
 
+
+
+
+/******************************************************************************
+ * PrintMatrix(t_matrix *mA)
+ *
+ * Arguments: mA - (t_matrix *) the matrix
+ * Returns: (void)
+ * Side-Effects: none
+ *
+ * Description: print the matrix pointed by mA
+ *****************************************************************************/
+void PrintMatrix(matriz *mA)
+{
+ 
+  int pI, pJ;
+
+  printf( "Matrix:\n" );
+  for( pI = 0; pI < mA->linhas ; pI++ ){
+    for( pJ = 0; pJ < mA->colunas ; pJ++ )
+      printf( "%.2f ", GetMatrixElement( mA, pI, pJ ) );
+    printf( "\n" );
+  }
+
+  return;
+
+}
+
+/******************************************************************************
+ * GetMatrixElement(Matrix *mA, int pI, int pJ)
+ *
+ * Arguments: mA - (matrix *) the matrix
+ *            pI - (int) row of the element
+ *            pJ - (int) column if the element
+ * Returns: (float) the value of the matrix that is in (pI, pJ)
+ * Side-Effects: none
+ *
+ * Description: returns an element in the matrix (mA) in position (pI,pJ)
+ *****************************************************************************/
+float GetMatrixElement(matriz *mA, int pI, int pJ)
+{
+
+  return mA->values[pI][pJ];
+
+}
