@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "matriz.h"
+#include "listas.h"
 
 struct _matriz {
   float **values;

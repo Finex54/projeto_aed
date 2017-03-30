@@ -3,6 +3,7 @@
 #include <strings.h>
 
 #include "matriz.h"
+#include "listas.h"
 
 
 
