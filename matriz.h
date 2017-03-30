@@ -6,10 +6,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "listas.h"
+
 /* type definition for structure to hold word */
 typedef struct _matriz matriz;
 
-/*Funções implementadas em matriz.c relacionadas com as matrizes e a lista de matrizes*/
+
+
+lista *saveMatrices( FILE *fm );
+matriz *NewMatrix(int linhas, int colunas);
+void SetMatrixElement(matriz *mA, int pI, int pJ, float value);
+
+
 
 
 #endif

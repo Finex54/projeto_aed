@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 {
 	char *nomeficheiro;
   	FILE *fp_entrada;
-  	matriz *lista;
+  	lista *lista_matrizes;
 
   	/*
   		CASO A EXECUÇÃO DO FICHEIRO NÃO SEJA REALIZADA
@@ -73,6 +73,7 @@ int main(int argc, char *argv[])
     exit(2);
   }
 
+  lista_matrizes = saveMatrices( fp_entrada );
 
 
 
