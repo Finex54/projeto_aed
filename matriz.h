@@ -20,6 +20,9 @@ lista  *criaNovoNoLista (lista* lm, matriz* this, int *err);
 matriz* getItemLista (lista *m);
 void PrintMatrix(matriz *mA);
 float GetMatrixElement(matriz *mA, int pI, int pJ);
+void FreeMatrix(matriz *mA);
+void FreeItem( matriz* this);
+void libertaLista(lista *lm, void freeItem(matriz*));
 
 
 

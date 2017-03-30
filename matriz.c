@@ -184,3 +184,45 @@ float GetMatrixElement(matriz *mA, int pI, int pJ)
   return mA->values[pI][pJ];
 
 }
+
+/******************************************************************************
+ * FreeMatrix(t_matrix *mA)
+ *
+ * Arguments: mA - (t_matrix *) the matrix
+ * Returns: (void)
+ * Side-Effects: none
+ *
+ * Description: free all the memory associated with the matrix mA
+ *****************************************************************************/
+void FreeMatrix(matriz *mA)
+{
+  int pI;
+  /* Complete the code here */
+  for ( pI = 0; pI < mA->linhas; pI++ )
+    free(mA->values[pI]);
+
+  free(mA->values);
+  free(mA);
+
+
+  return;
+
+}
+
+/******************************************************************************
+ * FreeItem ()
+ *
+ * Arguments: p - pointer to Item
+ * Returns: (void)
+ * Side-Effects: calls function to free word structure
+ *
+ * Description: interfaces generic list item to specific matrix structure
+ *
+ *****************************************************************************/
+void FreeItem( matriz* this)
+{
+
+  FreeMatrix( (matriz *)this);
+
+  return;
+}

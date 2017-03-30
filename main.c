@@ -114,8 +114,7 @@ int main(int argc, char *argv[])
 
 
   	/*Liberta a memória da lista*/
-
-    /*FALTA LIBERTAR MEMÓRIA DA LISTA AQUI*/
+      libertaLista( lista_matrizes, FreeItem );
 
 
   	/*Fecha o ficheiro*/
