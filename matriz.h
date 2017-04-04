@@ -23,6 +23,9 @@ float GetMatrixElement(matriz *mA, int pI, int pJ);
 void FreeMatrix(matriz *mA);
 void FreeItem( matriz* this);
 void libertaLista(lista *lm, void freeItem(matriz*));
+int GetMatrixColunas(matriz *mA);
+int GetMatrixLinhas(matriz *mA);
+float** GetMatrix(matriz *mA);
 
 
 

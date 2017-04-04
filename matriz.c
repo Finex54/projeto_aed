@@ -186,6 +186,28 @@ float GetMatrixElement(matriz *mA, int pI, int pJ)
 
 }
 
+
+int GetMatrixLinhas(matriz *mA)
+{
+
+  return mA->linhas;
+
+}
+
+int GetMatrixColunas(matriz *mA)
+{
+
+  return mA->colunas;
+
+}
+
+float** GetMatrix(matriz *mA)
+{
+
+  return mA->values;
+
+}
+
 /******************************************************************************
  * FreeMatrix(t_matrix *mA)
  *
