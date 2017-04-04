@@ -78,7 +78,6 @@ int verifica_extensao(char* filename)
 
 int main(int argc, char *argv[])
 {
-  int i,j;
 	char *nomeficheiro;
   	FILE *fp_entrada;
   	lista *lista_matrizes;
@@ -113,15 +112,6 @@ int main(int argc, char *argv[])
   /*APENAS PARA TESTE*/
     PrintList( lista_matrizes);
 
-
-    for(i=0; i<GetMatrixLinhas(getItemLista(lista_matrizes))-1; i++)
-      for(j=0; j<GetMatrixColunas(getItemLista(lista_matrizes))-1; j++)
-       if (getItemLista(lista_matrizes))
-       {
-         DFS(i, j, GetMatrix(getItemLista(lista_matrizes)), GetMatrixLinhas(getItemLista(lista_matrizes)), GetMatrixColunas(getItemLista(lista_matrizes)));
-          printf("\n");
-
-        }
 
 
   	/*Liberta a memória da lista*/
