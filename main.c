@@ -73,6 +73,38 @@ int verifica_extensao(char* filename)
 }
 
 
+/******************************************************************************
+*
+*EscreveFileSaida()
+*
+*Não retorna nada
+*Cria o ficheiro .moves
+*
+******************************************************************************/
+
+/*ALTERAR ENTRADAS PARA RECEBER A LISTA E A MATRIZ A ESCREVER MAIS A PONTUAÇÃO*/
+
+void EscreveFileSaida(char *nomeEntrada)
+{
+  char ext[] = "moves";
+  char nomeSaida[]="\0";
+  int i=0;
+  FILE *fpOut;
+  
+  for(i=0; i<(strlen(nomeEntrada)-3); i++)
+    nomeSaida[i] = nomeEntrada[i];
+
+  nomeSaida[i] = '\0';
+
+  strcat(nomeSaida, ext);
+
+  printf("\n\n %s \n\n", nomeSaida);  /*APENAS PARA TESTE*/
+
+  fpOut=fopen(nomeSaida, "w");
+
+
+}
+
 
 
 
@@ -112,6 +144,8 @@ int main(int argc, char *argv[])
   /*APENAS PARA TESTE*/
     PrintList( lista_matrizes);
 
+
+      EscreveFileSaida(nomeficheiro);
 
 
   	/*Liberta a memória da lista*/
