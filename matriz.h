@@ -19,13 +19,13 @@ void SetMatrixElement(matriz *mA, int pI, int pJ, float value);
 lista  *criaNovoNoLista (lista* lm, matriz* this, int *err);
 matriz* getItemLista (lista *m);
 void PrintMatrix(matriz *mA);
-float GetMatrixElement(matriz *mA, int pI, int pJ);
+int GetMatrixElement(matriz *mA, int pI, int pJ);
 void FreeMatrix(matriz *mA);
 void FreeItem( matriz* this);
 void libertaLista(lista *lm, void freeItem(matriz*));
 int GetMatrixColunas(matriz *mA);
 int GetMatrixLinhas(matriz *mA);
-float** GetMatrix(matriz *mA);
+int** GetMatrix(matriz *mA);
 
 
 

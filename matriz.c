@@ -6,7 +6,7 @@
 #include "listas.h"
 
 struct _matriz {
-  float **values;
+  int **values;
   int linhas, colunas;
 };
 
@@ -31,9 +31,9 @@ matriz *NewMatrix(int linhas, int colunas)
 
   /* allocate space for the matrix */
   matriz *Mat = (matriz*) malloc (sizeof(matriz));/* Write your code here */
-  Mat->values = (float **) malloc(linhas*sizeof(float*));/* Write your code here */
+  Mat->values = (int **) malloc(linhas*sizeof(int*));/* Write your code here */
   for ( pI = 0; pI < linhas; pI++ )
-    Mat->values[pI] = (float*) malloc (colunas*sizeof(float));/* Write your code here */
+    Mat->values[pI] = (int*) malloc (colunas*sizeof(int));/* Write your code here */
  
   /* initiate matrix */
   for ( pI =0; pI < linhas; pI++ )
@@ -160,7 +160,7 @@ void PrintMatrix(matriz *mA)
   printf( "Matrix:\n" );
   for( pI = 0; pI < mA->linhas ; pI++ ){
     for( pJ = 0; pJ < mA->colunas ; pJ++ )
-      printf( "%.2f ", GetMatrixElement( mA, pI, pJ ) );
+      printf( "%d ", GetMatrixElement( mA, pI, pJ ) );
     printf( "\n" );
   }
 
@@ -179,7 +179,7 @@ void PrintMatrix(matriz *mA)
  *
  * Description: returns an element in the matrix (mA) in position (pI,pJ)
  *****************************************************************************/
-float GetMatrixElement(matriz *mA, int pI, int pJ)
+int GetMatrixElement(matriz *mA, int pI, int pJ)
 {
 
   return mA->values[pI][pJ];
@@ -201,7 +201,7 @@ int GetMatrixColunas(matriz *mA)
 
 }
 
-float** GetMatrix(matriz *mA)
+int** GetMatrix(matriz *mA)
 {
 
   return mA->values;
