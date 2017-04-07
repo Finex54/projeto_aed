@@ -145,11 +145,11 @@ int main(int argc, char *argv[])
     PrintList( lista_matrizes);
 
 
-      EscreveFileSaida(nomeficheiro);
+    EscreveFileSaida(nomeficheiro);
 
 
   	/*Liberta a memória da lista*/
-      libertaLista( lista_matrizes, FreeItem );
+    libertaLista( lista_matrizes, FreeItem );
 
 
   	/*Fecha o ficheiro*/
