@@ -89,7 +89,7 @@ lista *saveMatrices( FILE *fm )
   lista *lm;
   matriz *newMatrix;
   
-  int m_linhas = 0, m_colunas=0, variante=0;;
+  int m_linhas = 0, m_colunas=0, variante=0, linha=0, coluna=0;
   int pJ, pI, err;
   int NumberMatrices = 0;
   float newEntry = 0.0;
@@ -102,7 +102,7 @@ lista *saveMatrices( FILE *fm )
   while( 1 ){ 
 
     /* scan the size of the matrix NumberMatrices */
-    if( fscanf( fm, "%d %d %d", &m_linhas, &m_colunas, &variante ) != 3 )
+    if( fscanf( fm, "%d %d %d %d %d", &m_linhas, &m_colunas, &variante, &linha, &coluna ) != 5 )
       break;
 
     /* verify if size is correct */
