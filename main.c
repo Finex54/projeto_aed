@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "matriz.h"
 #include "listas.h"
-
 
 /******************************************************************************
  *  PrintList ()
@@ -86,8 +86,9 @@ int verifica_extensao(char* filename)
 
 void EscreveFileSaida(char *nomeEntrada)
 {
-  char *ext = "moves";
-  char nomeSaida[100]="/0";
+
+  char ext[6] = "moves";
+  char nomeSaida[100];
   int i=0;
   FILE *fpOut;
   
