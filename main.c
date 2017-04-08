@@ -118,7 +118,6 @@ void VarianteUm(matriz* mA)
 
 
 
-
 }
 
 
@@ -130,7 +129,7 @@ void VarianteDois(matriz* mA)
 
 
 
-  
+
 
 }
 
