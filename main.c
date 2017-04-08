@@ -6,8 +6,6 @@
 #include "matriz.h"
 #include "listas.h"
 
-#define MAX_FILE 100
-
 /******************************************************************************
  *  PrintList ()
  *
@@ -89,7 +87,7 @@ int verifica_extensao(char* filename)
 void EscreveFileSaida(char *nomeEntrada)
 {
   char ext[] = "moves";
-  char nomeSaida[MAX_FILE]="\0";
+  char *nomeSaida="\0";
   int i=0;
   FILE *fpOut;
   
