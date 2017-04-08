@@ -107,15 +107,15 @@ void EscreveFileSaida(char *nomeEntrada)
 
 }
 
-int VarianteUm(lista *lm)
+void VarianteUm(lista *lm)
 {
 lista* aux;
 
 for(aux = lm; aux!= NULL; aux = getProxElementoLista(aux))
 {
 matriz *mA = getItemLista(aux);
-int value=0;
-value = GetMatrixElement(mA, GetMatrixLinhas(mA) - mA->linha_cluster, GetMatrixColunas(mA) - 1);
+int value = 1;
+value = GetMatrixElement(mA, GetMatrixLinhas(mA) - GetMatrixLinhaCluster(mA), GetMatrixColunas(mA) - 1);
 
 printf("%d\n", value);
 }
