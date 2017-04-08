@@ -8,6 +8,7 @@
 struct _matriz {
   int **values;
   int linhas, colunas;
+  int variante, linha_cluster, coluna_cluster;
 };
 
 
