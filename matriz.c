@@ -200,10 +200,27 @@ int GetMatrixLinhas(matriz *mA)
 
 }
 
+
+int GetMatrixLinhaCluster(matriz *mA)
+{
+
+  return mA->linha_cluster;
+
+}
+
+
+
 int GetMatrixColunas(matriz *mA)
 {
 
   return mA->colunas;
+
+}
+
+int GetMatrixColunaCluster(matriz *mA)
+{
+
+  return mA->coluna_cluster;
 
 }
 
