@@ -86,8 +86,8 @@ int verifica_extensao(char* filename)
 
 void EscreveFileSaida(char *nomeEntrada)
 {
-  char ext[] = "moves";
-  char nomeSaida[]="\0";
+  char *ext = "moves";
+  char nomeSaida[100]="/0";
   int i=0;
   FILE *fpOut;
   
@@ -102,6 +102,7 @@ void EscreveFileSaida(char *nomeEntrada)
 
   fpOut=fopen(nomeSaida, "w");
 
+  fclose(fpOut);
 
 }
 
