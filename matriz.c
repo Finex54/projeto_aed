@@ -224,6 +224,14 @@ int GetMatrixColunaCluster(matriz *mA)
 
 }
 
+int GetVariante(matriz *mA)
+{
+
+  return mA->variante;
+
+}
+
+
 int** GetMatrix(matriz *mA)
 {
 

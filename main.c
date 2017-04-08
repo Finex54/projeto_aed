@@ -107,18 +107,58 @@ void EscreveFileSaida(char *nomeEntrada)
 
 }
 
-void VarianteUm(lista *lm)
-{
-lista* aux;
 
-for(aux = lm; aux!= NULL; aux = getProxElementoLista(aux))
-{
-matriz *mA = getItemLista(aux);
-int value = 1;
-value = GetMatrixElement(mA, GetMatrixLinhas(mA) - GetMatrixLinhaCluster(mA), GetMatrixColunas(mA) - 1);
 
-printf("%d\n", value);
+
+void VarianteUm(matriz* mA)
+{
+  int lcluster =  GetMatrixLinhas(mA) - GetMatrixLinhaCluster(mA);
+  int ccluster = GetMatrixColunaCluster(mA) - 1;
+  int value = GetMatrixElement(mA, lcluster, ccluster);
+
+
+
+
 }
+
+
+void VarianteDois(matriz* mA)
+{
+  int lcluster = GetMatrixLinhas(mA) - GetMatrixLinhaCluster(mA);
+  int ccluster = GetMatrixColunaCluster(mA) - 1;
+  int value = GetMatrixElement(mA, lcluster, ccluster);
+
+
+
+  
+
+}
+
+
+/**********************************************
+*
+*CALCULA: FAZ VARIANTE 1 OU VARIANTE 2
+*
+*
+**********************************************/
+
+
+void Calcula(lista *lm)
+{
+
+lista *aux=NULL;
+
+for(aux=lm; aux!=NULL; aux=getProxElementoLista(aux))
+{
+  int variante = GetVariante(getItemLista(aux));
+  if (variante==1)
+    VarianteUm(getItemLista(aux));
+
+  if(variante==2)
+    VarianteDois(getItemLista(aux));
+
+}
+
 }
 
 
@@ -158,6 +198,9 @@ int main(int argc, char *argv[])
   /*APENAS PARA TESTE*/
     PrintList( lista_matrizes);
 
+
+
+    Calcula(lista_matrizes);
 
     EscreveFileSaida(nomeficheiro);
 

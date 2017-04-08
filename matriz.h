@@ -26,6 +26,9 @@ void libertaLista(lista *lm, void freeItem(matriz*));
 int GetMatrixColunas(matriz *mA);
 int GetMatrixLinhas(matriz *mA);
 int** GetMatrix(matriz *mA);
+int GetMatrixLinhaCluster(matriz *mA);
+int GetMatrixColunaCluster(matriz *mA);
+int GetVariante(matriz *mA);
 
 
 
