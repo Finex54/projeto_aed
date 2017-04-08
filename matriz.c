@@ -24,7 +24,7 @@ struct _matriz {
  *
  * Description: returns the new matrix 
  *****************************************************************************/
-matriz *NewMatrix(int linhas, int colunas)
+matriz *NewMatrix(int linhas, int colunas, int variante, int coluna_cluster, int linha_cluster)
 {
 
   int pI, pJ;
@@ -43,6 +43,9 @@ matriz *NewMatrix(int linhas, int colunas)
 
   Mat->linhas = linhas;
   Mat->colunas = colunas;
+  Mat->variante = variante;
+  Mat->coluna_cluster = coluna_cluster;
+  Mat->linha_cluster = linha_cluster;
 
   return Mat;
 
@@ -115,7 +118,7 @@ lista *saveMatrices( FILE *fm )
 
 
     /* create a new matrix */
-    newMatrix = NewMatrix( m_linhas, m_colunas );
+    newMatrix = NewMatrix( m_linhas, m_colunas, variante, linha, coluna );
 
     /* save the matrix */
     for( pI = 0 ; pI < m_linhas ; pI++ ){
@@ -160,6 +163,7 @@ void PrintMatrix(matriz *mA)
   int pI, pJ;
 
   printf( "Matrix:\n" );
+  printf("Variante: %d, Cluster: (%d, %d)\n", mA->variante, mA->linha_cluster, mA->coluna_cluster);
   for( pI = 0; pI < mA->linhas ; pI++ ){
     for( pJ = 0; pJ < mA->colunas ; pJ++ )
       printf( "%d ", GetMatrixElement( mA, pI, pJ ) );
