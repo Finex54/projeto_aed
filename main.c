@@ -6,6 +6,7 @@
 #include "matriz.h"
 #include "listas.h"
 
+
 /******************************************************************************
  *  PrintList ()
  *
@@ -159,6 +160,7 @@ for(aux=lm; aux!=NULL; aux=getProxElementoLista(aux))
 }
 
 }
+
 
 
 int main(int argc, char *argv[])
