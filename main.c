@@ -108,6 +108,17 @@ void EscreveFileSaida(char *nomeEntrada)
 }
 
 
+int ContaClusterVar1(matriz* mA, int linhaCluster, int colunaCluster, int contagem)
+{
+  int valor = GetMatrixElement(mA, linhaCluster, colunaCluster);
+  printf("\n\n%d %d %d\n\n", valor, GetMatrixLinhas(mA), linhaCluster);
+
+  if (valor==-1 || linhaCluster>GetMatrixLinhas(mA) || colunaCluster >GetMatrixColunas(mA) || linhaCluster <0 || colunaCluster <0)
+    return -1;
+
+}
+
+
 
 
 void VarianteUm(matriz* mA)
@@ -115,7 +126,12 @@ void VarianteUm(matriz* mA)
   int lcluster =  GetMatrixLinhas(mA) - GetMatrixLinhaCluster(mA);
   int ccluster = GetMatrixColunaCluster(mA) - 1;
   int value = GetMatrixElement(mA, lcluster, ccluster);
+  int contagem=1;
 
+  /*ContaClusterVar1(mA, lcluster, ccluster, &contagem);*/
+  contagem=ContaClusterVar1(mA, lcluster, ccluster, contagem);
+
+  printf("\n\nContagem = %d\n\n", contagem);
 
 
 }
