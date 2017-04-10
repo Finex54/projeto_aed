@@ -167,17 +167,28 @@ lista *aux=NULL;
 
 for(aux=lm; aux!=NULL; aux=getProxElementoLista(aux))
 {
+  int vertices=0;
+  Graph *grafo;
   int variante = GetVariante(getItemLista(aux));
+  if(variante == 1 || variante == 2){
+
+    /*Calcular o número de vértices da matriz*/
+    for(int i = 0; i<GetMatrixLinhas(getItemLista(aux)); i++)
+      for(int j=0; j< GetMatrixColunas(getItemLista(aux)); j++)
+        /*if( GetMatrixElement(getItemLista(aux), i, j)!= -1 )*/vertices++;
+   grafo = GRAPHinit(vertices);
+   //printf("numero de vertices: %d\n", vertices);
+
+  /* 
   if (variante==1)
     VarianteUm(getItemLista(aux));
 
   if(variante==2)
-    VarianteDois(getItemLista(aux));
-
+    VarianteDois(getItemLista(aux));*/
 }
-
+  else printf("Erro ao selecionar a variante\n");
 }
-
+}
 
 
 int main(int argc, char *argv[])
@@ -221,7 +232,6 @@ int main(int argc, char *argv[])
     Calcula(lista_matrizes);
 
     EscreveFileSaida(nomeficheiro);
-
 
   	/*Liberta a memória da lista*/
     libertaLista( lista_matrizes, FreeItem );
