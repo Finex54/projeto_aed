@@ -46,7 +46,7 @@ int **MATRIXinit(int V1, int V2, int value)
 		return G;
 	}
 
-	Graph *PreencheMatrizAdjacencias(Graph *G, matriz *mA, int v)
+	Graph *PreencheMatrizAdjacencias(Graph *G,matriz *mA, int v)
 	{
   	int colunas = GetMatrixColunas(mA)-1;
 

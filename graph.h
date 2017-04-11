@@ -1,10 +1,9 @@
-#include <stdlib.h>
-
-#define maxV 100
-
 #ifndef _GRAPH_H
 #define _GRAPH_H
 
+#include <stdlib.h>
+
+#define maxV 100
 #define dfsR search
 
 static int cnt, pre[maxV];
