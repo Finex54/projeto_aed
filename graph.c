@@ -46,11 +46,11 @@ int **MATRIXinit(int V1, int V2, int value)
 		return G;
 	}
 
-	Graph *PreencheMatrizAdjacencias(Graph *G,matriz *mA, int v)
+	Graph *PreencheMatrizAdjacencias(Graph *G,matriz *mA)
 	{
   	int colunas = GetMatrixColunas(mA)-1;
 
- 	 for(int i = 0; i<v; i++)
+ 	 for(int i = 0; i<G->V; i++)
   	{
     	for(int linhas = 1; linhas<= GetMatrixLinhas(mA); linhas++){
     	if(i == 0 || i == colunas*linhas+1) G->adj[i][1]=1;

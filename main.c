@@ -179,6 +179,8 @@ for(aux=lm; aux!=NULL; aux=getProxElementoLista(aux))
    grafo = GRAPHinit(vertices);
    //printf("numero de vertices: %d\n", vertices);
 
+   grafo = PreencheMatrizAdjacencias(grafo, getItemLista(aux));
+   PrintMATRIX(grafo);
   /* 
   if (variante==1)
     VarianteUm(getItemLista(aux));
@@ -226,8 +228,6 @@ int main(int argc, char *argv[])
 
   /*APENAS PARA TESTE*/
     PrintList( lista_matrizes);
-
-
 
     Calcula(lista_matrizes);
 

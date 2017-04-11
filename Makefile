@@ -13,7 +13,7 @@ matriz.o: matriz.c matriz.h
 listas.o: listas.c listas.h matriz.c
 	$(CC) -c $(CFLAGS) listas.c
 
-graph.o: graph.c graph.h matriz.h
+graph.o: graph.c graph.h matriz.c
 	$(CC) -c $(CFLAGS) graph.c
 
 clean::
